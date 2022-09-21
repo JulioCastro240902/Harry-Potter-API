@@ -6,6 +6,10 @@ import {
   Figure,
   Image,
   InformationBox,
+  NameBox,
+  TextBox,
+  P,
+  Span,
 } from "./styles.js";
 import Hogwards from "../../assets/Hogwards.png";
 
@@ -25,21 +29,46 @@ export default function Cards(props) {
 
   return (
     <Body>
-      <CardBody>
-        <BackgroundImage>
-          <Figure>
-            <Image src={Hogwards} alt="" />
-          </Figure>
-        </BackgroundImage>
-        <InformationBox>
-          <p>{props.name}</p>
-          <p>{props.house}</p>
-          <p>{props.age}</p>
-          <p>{props.birthday}</p>
-          <p>{props.Spicies}</p>
-          <button>See more</button>
-        </InformationBox>
-      </CardBody>
+      {Data.map((item) => {
+        return (
+          <CardBody>
+            <BackgroundImage>
+              <Figure>
+                <Image src={item.image ? item.image : Hogwards} alt="" />
+              </Figure>
+            </BackgroundImage>
+            <InformationBox>
+              <NameBox>
+                <h2>{item.name}</h2>
+              </NameBox>
+              <TextBox>
+                <P>
+                  House: <Span>{item.house ? item.house : "Unkown"}</Span>
+                </P>
+                <P>
+                  Gender: <Span>{item.gender}</Span>
+                </P>
+                <P>
+                  Age:
+                  <Span>
+                    {item.yearOfBirth ? 2022 - item.yearOfBirth : "Unkown"}
+                  </Span>
+                </P>
+                <P>
+                  Wizard: <Span>{item.wizard ? "Yes" : "No"}</Span>
+                </P>
+                <P>
+                  Species: <Span>{item.species ? item.species : "Unkown"}</Span>
+                </P>
+                <P>
+                  Patronus:
+                  <Span>{item.patronus ? item.patronus : "Unkown"}</Span>
+                </P>
+              </TextBox>
+            </InformationBox>
+          </CardBody>
+        );
+      })}
     </Body>
   );
 }

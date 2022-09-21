@@ -8,6 +8,8 @@ export const Body = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
 `;
 
 export const CardBody = styled.div`
@@ -28,13 +30,14 @@ export const BackgroundImage = styled.div`
 `;
 
 export const Figure = styled.figure`
-  width: 250px;
-  height: 150px;
+  width: 80%;
+  height: 80%;
 `;
 
 export const Image = styled.img`
   width: 100%;
   height: 100%;
+  border-radius: 15px;
 `;
 
 export const InformationBox = styled.div`
@@ -42,4 +45,24 @@ export const InformationBox = styled.div`
   height: calc(100% - 55%);
   background-color: rgb(231, 225, 243);
   border-radius: 0 0 15px 15px;
+`;
+
+export const NameBox = styled.div`
+  width: 100%;
+  text-align: center;
+`;
+
+export const TextBox = styled.div`
+  width: 100%;
+  margin-left: 10px;
+`;
+
+export const P = styled.p`
+  font-weight: bold;
+`;
+
+export const Span = styled.span`
+  font-style: italic;
+  font-weight: 400;
+  margin-left: 5px;
 `;
